@@ -1,6 +1,6 @@
-工号：ID
+﻿工号：ID
 姓名：Name
 性别：Sex
 职务：Job
-身份：Role
+分类：Role
 手机：Tele

@@ -48,7 +48,16 @@
                     <x:Panel ID="Panel2" runat="server" BodyPadding="5px" ShowBorder="false" ShowHeader="false"
                         Title="">
                         <Items>
-                            <x:Grid ID="Grid1" runat="server" Title="Grid" AllowPaging="true" PageSize="20" EnableRowNumber="true"
+                            <x:SimpleForm ID="SimpleForm1" runat="server" BodyPadding="5px" Title="SimpleForm" ShowBorder="false" ShowHeader="false">
+                                <Items>
+                                    <x:DropDownList ID="DropDownList_StaffType" runat="server" Label="请选择员工类型">
+                                        <x:ListItem EnableSelect="true" Selected="true" Text="所有人" Value="0" />
+                                        <x:ListItem EnableSelect="true" Selected="false" Text="考评人" Value="1" />
+                                        <x:ListItem EnableSelect="true" Selected="false" Text="被考评人" Value="2" />
+                                    </x:DropDownList>
+                                </Items>
+                            </x:SimpleForm>
+                            <x:Grid ID="Grid1" runat="server" Title="员工名单" AllowPaging="true" PageSize="20" EnableRowNumber="true"
                                 Height="520px" AutoScroll="true" DataKeyNames="ID" EnableCheckBoxSelect="true"
                                 CheckBoxSelectOnly="true" OnPageIndexChange="Grid1_PageIndexChange" ClearSelectedRowsAfterPaging="false">
                                 <Columns>
@@ -60,7 +69,7 @@
                                         Hidden="true" />
                                     <x:BoundField Width="200px" DataField="Job" DataFormatString="{0}" HeaderText="职务"
                                         Hidden="true" />
-                                    <x:BoundField Width="150px" DataField="Role" DataFormatString="{0}" HeaderText="身份"
+                                    <x:BoundField Width="150px" DataField="Role" DataFormatString="{0}" HeaderText="分类"
                                         Hidden="true" />
                                     <x:BoundField Width="300px" DataField="Tele" DataFormatString="{0}" HeaderText="电话"
                                         Hidden="true" />
