@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>同济大学校医院考核系统</title>
+    <title>同济大学校医院考评系统</title>
     <link href="../css/default.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -17,7 +17,7 @@
                     <x:ContentPanel ShowBorder="false" CssClass="jumbotron" ShowHeader="false" ID="ContentPanel1"
                         runat="server">
                         <div class="title">
-                            <a href="./HomePage.aspx" style="color: #fff;">同济大学校医院考核系统</a>
+                            <a href="./HomePage.aspx" style="color: #fff;">同济大学校医院考评系统</a>
                         </div>
                         <div class="version">
                             <ul class="list">
@@ -27,8 +27,8 @@
                                 </li>
                                 <li class="list">&nbsp|&nbsp</li>
                                 <li class="list">
-                                    <x:LinkButton ID="LoginOut" runat="server" Label="Label" Text="注销" ConfirmTitle="提示"
-                                        ConfirmText="确认注销？" OnClick="LoginOut_Click">
+                                    <x:LinkButton ID="LoginOut" runat="server" Label="Label" Text="注销" ConfirmText="确定注销？"
+                                         OnClick="LoginOut_Click">
                                     </x:LinkButton>
                                 </li>
                             </ul>

@@ -10,7 +10,7 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SQS.UI</RootNamespace>
+    <RootNamespace>CES.UI</RootNamespace>
     <AssemblyName>SQS</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
@@ -59,10 +59,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="common\menu.xml" />
-    <Content Include="common\menu_for_manager.xml">
+    <Content Include="common\menu.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="common\menu_evaluator.xml" />
     <Content Include="css\default.css" />
     <Content Include="css\main.css" />
     <Content Include="icon\accept.png" />
@@ -1883,8 +1883,17 @@
     <Content Include="js\default.js" />
     <Content Include="lib\FineUI.dll" />
     <Content Include="lib\Newtonsoft.Json.dll" />
+    <Content Include="Pages\AccountManagement\ChangePasswd.aspx" />
+    <Content Include="Pages\EvaluateTblManagement\MakeEvaluateTbl.aspx" />
+    <Content Include="Pages\EvaluationManagement\CheckResult.aspx" />
+    <Content Include="Pages\EvaluationManagement\Evaluate.aspx" />
     <Content Include="Pages\HomePage.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Pages\MsgManagement\SendMsg.aspx" />
+    <Content Include="Pages\ReportManagement\MakeReport.aspx" />
+    <Content Include="Pages\StaffManagement\UploadStaffInfo.aspx" />
+    <Content Include="Pages\SystemManagement\DeleteFiles.aspx" />
+    <Content Include="Pages\SystemManagement\SetEvaluationStage.aspx" />
     <Content Include="Style\alogin.css" />
     <Content Include="Style\CheckPost.css" />
     <Content Include="Style\common.css" />
@@ -1912,6 +1921,34 @@
     <Compile Include="Code\PageBase.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Pages\AccountManagement\ChangePasswd.aspx.cs">
+      <DependentUpon>ChangePasswd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AccountManagement\ChangePasswd.aspx.designer.cs">
+      <DependentUpon>ChangePasswd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EvaluateTblManagement\MakeEvaluateTbl.aspx.cs">
+      <DependentUpon>MakeEvaluateTbl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EvaluateTblManagement\MakeEvaluateTbl.aspx.designer.cs">
+      <DependentUpon>MakeEvaluateTbl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EvaluationManagement\CheckResult.aspx.cs">
+      <DependentUpon>CheckResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EvaluationManagement\CheckResult.aspx.designer.cs">
+      <DependentUpon>CheckResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EvaluationManagement\Evaluate.aspx.cs">
+      <DependentUpon>Evaluate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EvaluationManagement\Evaluate.aspx.designer.cs">
+      <DependentUpon>Evaluate.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1926,12 +1963,47 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\MsgManagement\SendMsg.aspx.cs">
+      <DependentUpon>SendMsg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MsgManagement\SendMsg.aspx.designer.cs">
+      <DependentUpon>SendMsg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ReportManagement\MakeReport.aspx.cs">
+      <DependentUpon>MakeReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ReportManagement\MakeReport.aspx.designer.cs">
+      <DependentUpon>MakeReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\StaffManagement\UploadStaffInfo.aspx.cs">
+      <DependentUpon>UploadStaffInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\StaffManagement\UploadStaffInfo.aspx.designer.cs">
+      <DependentUpon>UploadStaffInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SystemManagement\DeleteFiles.aspx.cs">
+      <DependentUpon>DeleteFiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SystemManagement\DeleteFiles.aspx.designer.cs">
+      <DependentUpon>DeleteFiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SystemManagement\SetEvaluationStage.aspx.cs">
+      <DependentUpon>SetEvaluationStage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SystemManagement\SetEvaluationStage.aspx.designer.cs">
+      <DependentUpon>SetEvaluationStage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="common\menu_for_visitor.xml">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="common\menu_super.xml" />
+    <Content Include="common\menu_manager.xml" />
+    <Content Include="common\menu_evaluated.xml" />
     <None Include="images\logo\logo.psd" />
     <None Include="images\logo\logo_127.psd" />
   </ItemGroup>

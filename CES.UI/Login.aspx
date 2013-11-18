@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>同济大学校医院考核系统欢迎您！</title>
+    <title>同济大学校医院考评系统欢迎您！</title>
     <link href="../Style/alogin.css" rel="stylesheet" type="text/css" />
 </head>
 <body>

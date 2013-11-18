@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Tree>
   <TreeNode Text="员工信息管理" SingleClickExpand="true">
-    <TreeNode Text="上传人员名单" NavigateUrl="~/Pages/StaffManagement/UploadStaffInfo.aspx?userid=[UserID]">
+    <TreeNode Text="上传人员名单" NavigateUrl="~/Pages/StaffManagement/UploadStaffInfo.aspx">
     </TreeNode>
   </TreeNode>
   <TreeNode Text="述职报告管理" SingleClickExpand="true">

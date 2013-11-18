@@ -17,7 +17,7 @@ namespace CES.UI
         #region OnInit
         protected void Page_Init(object sender, EventArgs e)
         {
-            checkSession();
+            
         }
 
         protected override void OnInit(EventArgs e)
@@ -98,15 +98,7 @@ namespace CES.UI
 
         #region Common Method
         /// <summary>
-        /// 检查Session中相关字段是否过期，若过期则跳转至登录页面
-        /// </summary>
-        protected void checkSession()
-        { 
-        
-        }
-
-        /// <summary>
-        /// 检测是否为空字符串，不为空返回true，否则返回false
+        /// 检测是否都为空字符串，都不为空返回true，否则返回false
         /// </summary>
         /// <param name="items"></param>
         /// <returns></returns>

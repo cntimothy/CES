@@ -14,14 +14,16 @@ namespace CES.UI
     public partial class HomePage : PageBase
     {
         #region Page_Init
-
         protected new void Page_Init(object sender, EventArgs e)
         {
             base.Page_Init(sender, e);
             // 注册客户端脚本，服务器端控件ID和客户端ID的映射关系
             JObject ids = GetClientIDS(mainTabStrip);
 
-            Accordion accordionMenu = InitAccordionMenu();
+            //从Session中读取UserID
+            string userID = Session["UserID"].ToString();
+
+            Accordion accordionMenu = InitAccordionMenu(userID);
             ids.Add("mainMenu", accordionMenu.ClientID);
             ids.Add("menuType", "accordion");
 
@@ -34,7 +36,12 @@ namespace CES.UI
             }
         }
 
-        private Accordion InitAccordionMenu()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="userID">用户名</param>
+        /// <returns></returns>
+        private Accordion InitAccordionMenu(string userID)
         {
             Accordion accordionMenu = new Accordion();
             accordionMenu.ID = "accordionMenu";
@@ -67,8 +74,9 @@ namespace CES.UI
                     innerTree.AutoScroll = true;
                     accordionPane.Items.Add(innerTree);
 
+                    //将xml文件地址中的占位符换成真实的UserID
                     XmlDocument innerXmlDoc = new XmlDocument();
-                    innerXmlDoc.LoadXml(String.Format("<?xml version=\"1.0\" encoding=\"utf-8\" ?><Tree>{0}</Tree>", xmlNode.InnerXml));
+                    innerXmlDoc.LoadXml(String.Format("<?xml version=\"1.0\" encoding=\"utf-8\" ?><Tree>{0}</Tree>", xmlNode.InnerXml.Replace("[UserID]", userID)));
 
                     // 绑定AccordionPane内部的树控件
                     innerTree.DataSource = innerXmlDoc;
@@ -92,11 +100,9 @@ namespace CES.UI
 
             return jo;
         }
-
         #endregion
 
         #region Page_Load
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -111,7 +117,7 @@ namespace CES.UI
         {
             Session["UserID"] = null;
             Session["UserName"] = null;
-            Session["AccessLevel"] = null;
+            Session["UserType"] = null;
             Response.Redirect("../Login.aspx");
         }
 
@@ -157,7 +163,6 @@ namespace CES.UI
         #endregion
 
         #region Tree
-
         /// <summary>
         /// 重新设置每个节点的图标
         /// </summary>
@@ -195,13 +200,13 @@ namespace CES.UI
             {
                 iconUrl = "~/images/filetype/vs_txt.png";
             }
-            else if (fileType == "aspx")
-            {
-                iconUrl = "~/images/filetype/vs_aspx.png";
-            }
             else if (fileType == "htm" || fileType == "html")
             {
                 iconUrl = "~/images/filetype/vs_htm.png";
+            }
+            else
+            {
+                iconUrl = "~/images/filetype/vs_aspx.png";
             }
 
             return iconUrl;
