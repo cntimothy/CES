@@ -33,17 +33,17 @@
                                 Width="800px">
                                 <Columns>
                                     <x:BoundField Width="150px" DataField="ID" DataFormatString="{0}" HeaderText="工号"
-                                        Hidden="true" />
+                                        Hidden="false" />
                                     <x:BoundField Width="200px" DataField="Name" DataFormatString="{0}" HeaderText="姓名"
-                                        Hidden="true" />
+                                        Hidden="false" />
                                     <x:BoundField Width="50px" DataField="Sex" DataFormatString="{0}" HeaderText="性别"
-                                        Hidden="true" />
+                                        Hidden="false" />
                                     <x:BoundField Width="200px" DataField="Job" DataFormatString="{0}" HeaderText="职务"
-                                        Hidden="true" />
+                                        Hidden="false" />
                                     <x:BoundField Width="150px" DataField="Role" DataFormatString="{0}" HeaderText="分类"
-                                        Hidden="true" />
+                                        Hidden="false" />
                                     <x:BoundField Width="300px" DataField="Tele" DataFormatString="{0}" HeaderText="电话"
-                                        Hidden="true" />
+                                        Hidden="false" />
                                 </Columns>
                             </x:Grid>
                             <x:TextArea ID="TextArea1" runat="server" Label="Label" Text="" Width="300px" Height="200px" EmptyText="请输入短信内容，系统将在短信后面自动加上用户名和密码。">

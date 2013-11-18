@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonCtrl.cs" />
+    <Compile Include="EvaluationManagementCtrl.cs" />
     <Compile Include="LoginManagementCtrl.cs" />
     <Compile Include="MsgManagementCtrl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

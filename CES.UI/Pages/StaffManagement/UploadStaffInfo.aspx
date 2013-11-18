@@ -62,17 +62,17 @@
                                 CheckBoxSelectOnly="true" OnPageIndexChange="Grid1_PageIndexChange" ClearSelectedRowsAfterPaging="false">
                                 <Columns>
                                     <x:BoundField Width="150px" DataField="ID" DataFormatString="{0}" HeaderText="工号"
-                                        Hidden="true" />
+                                        Hidden="false" />
                                     <x:BoundField Width="200px" DataField="Name" DataFormatString="{0}" HeaderText="姓名"
-                                        Hidden="true" />
+                                        Hidden="false" />
                                     <x:BoundField Width="50px" DataField="Sex" DataFormatString="{0}" HeaderText="性别"
-                                        Hidden="true" />
+                                        Hidden="false" />
                                     <x:BoundField Width="200px" DataField="Job" DataFormatString="{0}" HeaderText="职务"
-                                        Hidden="true" />
+                                        Hidden="false" />
                                     <x:BoundField Width="150px" DataField="Role" DataFormatString="{0}" HeaderText="分类"
-                                        Hidden="true" />
+                                        Hidden="false" />
                                     <x:BoundField Width="300px" DataField="Tele" DataFormatString="{0}" HeaderText="电话"
-                                        Hidden="true" />
+                                        Hidden="false" />
                                 </Columns>
                             </x:Grid>
                         </Items>
