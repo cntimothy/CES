@@ -43,16 +43,9 @@ namespace CES.UI
             accordionMenu.ShowHeader = false;
             Region2.Items.Add(accordionMenu);
 
-            //AccessLevel accessLevel = (AccessLevel)Session["AccessLevel"];
+            UserType userType = (UserType)Session["UserType"];
             XmlDocument xmlDoc;
-            //if (accessLevel == AccessLevel.manager)
-            //{
-            //    xmlDoc = XmlDataSource_ForManager.GetXmlDocument();
-            //}
-            //else
-            //{
-                xmlDoc = XmlDataSource_ForVisitor.GetXmlDocument();
-            //}
+            xmlDoc = XmlDataSource.GetXmlDocument();
             
             XmlNodeList xmlNodes = xmlDoc.SelectNodes("/Tree/TreeNode");
             foreach (XmlNode xmlNode in xmlNodes)

@@ -5,7 +5,9 @@ using System.Text;
 
 namespace CES.DataStructure
 {
-    public class Class1
+    public enum LoginType
     {
+        NORMALUSER, //普通用户
+        MANAGER     //管理员
     }
 }

@@ -157,21 +157,48 @@ namespace CES.UI {
         protected global::FineUI.ContentPanel ContentPanel2;
         
         /// <summary>
-        /// XmlDataSource_ForVisitor 控件。
+        /// XmlDataSource_Super 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.XmlDataSource XmlDataSource_ForVisitor;
+        protected global::System.Web.UI.WebControls.XmlDataSource XmlDataSource_Super;
         
         /// <summary>
-        /// XmlDataSource_ForManager 控件。
+        /// XmlDataSource_Manager 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.XmlDataSource XmlDataSource_ForManager;
+        protected global::System.Web.UI.WebControls.XmlDataSource XmlDataSource_Manager;
+        
+        /// <summary>
+        /// XmlDataSource_Evaluated 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.XmlDataSource XmlDataSource_Evaluated;
+        
+        /// <summary>
+        /// XmlDataSource_Evaluator 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.XmlDataSource XmlDataSource_Evaluator;
+        
+        /// <summary>
+        /// XmlDataSource 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.XmlDataSource XmlDataSource;
     }
 }
