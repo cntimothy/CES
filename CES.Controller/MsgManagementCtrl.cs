@@ -7,32 +7,8 @@ using CES.DataStructure;
 
 namespace CES.Controller
 {
-    public class StaffManagementCtrl
+    public class MsgManagementCtrl
     {
-        /// <summary>
-        /// 导入指定路径的Excel文件，导入成功返回true，否则返回false（导入之前需要对table进行检查）
-        /// </summary>
-        /// <param name="path">指定的路径</param>
-        /// <param name="createCount">新增的记录数量</param>
-        /// <param name="updateCount">更新的记录数量</param>
-        /// <param name="exception"></param>
-        /// <returns></returns>
-        public static bool InportExcel(string path, ref int createCount, ref int updateCount, ref string exception)
-        {
-            return true;
-        }
-
-        /// <summary>
-        /// 删除指定id的记录，删除成功返回true，否则返回false
-        /// </summary>
-        /// <param name="idList">指定的id</param>
-        /// <param name="exception"></param>
-        /// <returns></returns>
-        public static bool DeleteByIDs(List<string> idList, ref string exception)
-        {
-            return true;
-        }
-
         /// <summary>
         /// 获取指定类型的员工信息，查询成功且不为空返回true，否则返回false
         /// </summary>
@@ -83,31 +59,13 @@ namespace CES.Controller
         }
 
         /// <summary>
-        /// 根据ID查询某个员工的信息，查询成功返回true，否则返回false
+        /// 给指定的ID发送短信
         /// </summary>
-        /// <param name="staffInfo"></param>
-        /// <param name="id"></param>
-        /// <param name="exception"></param>
+        /// <param name="IDList">指定的ID</param>
+        /// <param name="msg">短信内容</param>
+        /// <param name="excpetion"></param>
         /// <returns></returns>
-        public static bool GetStaffByID(ref StaffInfo staffInfo, string id, ref string exception)
-        {
-            staffInfo.ID = "0002";
-            staffInfo.Name = "高2";
-            staffInfo.Sex = "男";
-            staffInfo.JobID = "02";
-            staffInfo.Role = RoleType.LEADER;
-            staffInfo.Tele = "13258653265";
-            return true;
-        }
-
-        /// <summary>
-        /// 根据ID更行某个员工的信息，更新成功返回true，否则返回false
-        /// </summary>
-        /// <param name="staffInfo"></param>
-        /// <param name="id"></param>
-        /// <param name="exception"></param>
-        /// <returns></returns>
-        public static bool UpdateStaffByID(ref StaffInfo staffInfo, string id, ref string exception)
+        public static bool SendMsgByIDs(List<string> IDList, string msg, ref string excpetion)
         {
             return true;
         }
