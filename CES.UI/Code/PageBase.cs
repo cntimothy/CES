@@ -113,6 +113,15 @@ namespace CES.UI
             }
             return true;
         }
+
+        /// <summary>
+        /// 将UserID写入ViewState
+        /// </summary>
+        protected void WriteUserIDToViewState()
+        {
+            string userID = Request.QueryString["userid"];
+            ViewState["UserID"] = userID;
+        }
         #endregion
     }
 

@@ -1,0 +1,5 @@
+E:\projects\CES\CES.DataStructure\bin\Debug\CES.DataStructure.dll
+E:\projects\CES\CES.DataStructure\bin\Debug\CES.DataStructure.pdb
+E:\projects\CES\CES.DataStructure\obj\Debug\ResolveAssemblyReference.cache
+E:\projects\CES\CES.DataStructure\obj\Debug\CES.DataStructure.dll
+E:\projects\CES\CES.DataStructure\obj\Debug\CES.DataStructure.pdb
