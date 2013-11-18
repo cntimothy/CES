@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CES.DataStructure", "CES.Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CES.UI", "CES.UI\CES.UI.csproj", "{4E741CCD-C334-49FD-BA0E-8C8E343FBC51}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CES.Controller", "CES.Controller\CES.Controller.csproj", "{46812F61-973C-4857-9076-21D5DBD55814}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{4E741CCD-C334-49FD-BA0E-8C8E343FBC51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E741CCD-C334-49FD-BA0E-8C8E343FBC51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E741CCD-C334-49FD-BA0E-8C8E343FBC51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46812F61-973C-4857-9076-21D5DBD55814}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46812F61-973C-4857-9076-21D5DBD55814}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46812F61-973C-4857-9076-21D5DBD55814}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46812F61-973C-4857-9076-21D5DBD55814}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
