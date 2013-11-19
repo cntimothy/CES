@@ -15,7 +15,7 @@ namespace CES.Controller
         /// </summary>
         /// <param name="table"></param>
         /// <param name="exception"></param>
-        public static bool GetAll(ref DataTable table, ref string exception)
+        public static bool GetAllForEvaluate(ref DataTable table, ref string exception)
         {
             table.Columns.Add("ID");
             table.Columns.Add("Name");
@@ -103,6 +103,59 @@ namespace CES.Controller
         /// <returns></returns>
         public static bool SubmitScoreByID(string evaluatorID, ref string exception)
         {
+            return true;
+        }
+
+        /// <summary>
+        /// 获取所有被考评人信息，查询成功且不为空返回true，否则返回false
+        /// 如果考评的当前状态不是已开始，则返回空table
+        /// </summary>
+        /// <param name="table">(ID, Name, Sex, Job, Leader, Cadres, People, Sum)</param>
+        /// <param name="excpetion"></param>
+        /// <returns></returns>
+        public static bool GetAllForCheck(ref DataTable table, ref string excpetion)
+        {
+            table.Columns.Add("ID");
+            table.Columns.Add("Name");
+            table.Columns.Add("Sex");
+            table.Columns.Add("Job");
+            table.Columns.Add("Leader");
+            table.Columns.Add("Cadres");
+            table.Columns.Add("People");
+            table.Columns.Add("Sum");
+
+            table.Rows.Add("0001", "高1", "男", "职务123", "85", "28", "86", "45");
+            table.Rows.Add("0001", "高1", "男", "职务123", "85", "28", "86", "45");
+            table.Rows.Add("0001", "高1", "男", "职务123", "85", "28", "86", "45");
+            table.Rows.Add("0001", "高1", "男", "职务123", "85", "28", "86", "45");
+            table.Rows.Add("0001", "高1", "男", "职务123", "85", "28", "86", "45");
+            table.Rows.Add("0001", "高1", "男", "职务123", "85", "28", "86", "45");
+            table.Rows.Add("0001", "高1", "男", "职务123", "85", "28", "86", "45");
+            table.Rows.Add("0001", "高1", "男", "职务123", "85", "28", "86", "45");
+            table.Rows.Add("0001", "高1", "男", "职务123", "85", "28", "86", "45");
+            table.Rows.Add("0001", "高1", "男", "职务123", "85", "28", "86", "45");
+            table.Rows.Add("0001", "高1", "男", "职务123", "85", "28", "86", "45");
+            table.Rows.Add("0001", "高1", "男", "职务123", "85", "28", "86", "45");
+            table.Rows.Add("0001", "高1", "男", "职务123", "85", "28", "86", "45");
+            table.Rows.Add("0001", "高1", "男", "职务123", "85", "28", "86", "45");
+            table.Rows.Add("0001", "高1", "男", "职务123", "85", "28", "86", "45");
+            table.Rows.Add("0001", "高1", "男", "职务123", "85", "28", "86", "45");
+            table.Rows.Add("0001", "高1", "男", "职务123", "85", "28", "86", "45");
+            table.Rows.Add("0001", "高1", "男", "职务123", "85", "28", "86", "45");
+            table.Rows.Add("0001", "高1", "男", "职务123", "85", "28", "86", "45");
+            return true;
+        }
+
+        /// <summary>
+        /// 获取指定ID的详细分数
+        /// </summary>
+        /// <param name="scoreList">详细分数列表</param>
+        /// <param name="id">被考评人ID</param>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static bool GetScoresByID(ref List<int> scoreList, string id, ref string exception)
+        {
+            scoreList.AddRange(new int[] { 52, 56, 85, 52, 56, 85, 52, 56, 85, 52, 56, 85, 52, 56, 85, 52, 56, 85, 52, 56, 85, 52, 56, 85, 52, 56, 85, 52, 56, 85, 52, 56, 85});
             return true;
         }
     }
