@@ -11,6 +11,7 @@ namespace CES.Controller
     {
         /// <summary>
         /// 获取所有被考评人信息，查询成功且不为空返回true，否则返回false
+        /// 如果考评的当前状态不是已开始，则返回空table
         /// </summary>
         /// <param name="table"></param>
         /// <param name="exception"></param>

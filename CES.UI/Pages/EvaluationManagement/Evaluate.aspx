@@ -27,6 +27,13 @@
                     <x:Panel ID="Panel3" runat="server" BodyPadding="5px" ShowBorder="false" ShowHeader="false"
                         Title="Panel">
                         <Items>
+                            <x:SimpleForm ID="SimpleForm1" runat="server" BodyPadding="5px" Title="SimpleForm"
+                                ShowBorder="false" ShowHeader="false">
+                                <Items>
+                                    <x:Label ID="Label1" runat="server" Label="当前考评状态" Text="***">
+                                    </x:Label>
+                                </Items>
+                            </x:SimpleForm>
                             <x:Grid ID="Grid1" runat="server" Title="被考评人名单">
                                 <Columns>
                                     <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="工号"
