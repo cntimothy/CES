@@ -9,6 +9,7 @@ using System.Web.Script.Serialization;
 using System.IO;
 using CES.Controller;
 using CES.DataStructure;
+using System.Data;
 
 namespace CES.UI.Pages.StaffManagement
 {
@@ -21,6 +22,7 @@ namespace CES.UI.Pages.StaffManagement
             {
                 //将UserID写入ViewState
                 WriteUserIDToViewState();
+                bindStaffInfoToGrid();
             }
         }
         #endregion
@@ -147,12 +149,40 @@ namespace CES.UI.Pages.StaffManagement
                 Alert.ShowInTop("删除失败\n原因：" + exception, MessageBoxIcon.Error);
             }
         }
+
+        /// <summary>
+        /// 下拉列表事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void DropDownList_StaffType_SelectedChanged(object sender, EventArgs e)
+        {
+            bindStaffInfoToGrid();
+        }
         #endregion
 
         #region Private Method
+        /// <summary>
+        /// 绑定人员信息到Grid
+        /// </summary>
         private void bindStaffInfoToGrid()
         {
-
+            string exception = "";
+            DataTable table = new DataTable();
+            StaffType staffType = (StaffType)Enum.Parse(typeof(StaffType), DropDownList_StaffType.SelectedValue);
+            if (StaffManagementCtrl.GetAll(ref table, staffType, ref exception))
+            {
+                DataView dv = table.DefaultView;
+                dv.Sort = "Role ASC";                
+                Grid1.DataSource = dv;
+                Grid1.DataBind();
+            }
+            else
+            {
+                table.Clear();
+                Grid1.DataSource = table;
+                Grid1.DataBind();
+            }
         }
 
         /// <summary>

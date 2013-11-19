@@ -2008,18 +2008,18 @@
     <None Include="images\logo\logo_127.psd" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="downloadfiles\template\" />
+    <Folder Include="upload\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\CES.Controller\CES.Controller.csproj">
-      <Project>{27E0B913-90FB-47F0-9EE8-5E4CA3839A41}</Project>
+      <Project>{46812F61-973C-4857-9076-21D5DBD55814}</Project>
       <Name>CES.Controller</Name>
     </ProjectReference>
     <ProjectReference Include="..\CES.DataStructure\CES.DataStructure.csproj">
-      <Project>{366769BD-2CE0-4B5D-9DF2-BA9E09748DBC}</Project>
+      <Project>{ADBB6DBA-2DE1-4780-946B-73729EC2C2CB}</Project>
       <Name>CES.DataStructure</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="downloadfiles\template\" />
-    <Folder Include="upload\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
