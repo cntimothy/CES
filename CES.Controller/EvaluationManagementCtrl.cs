@@ -14,8 +14,9 @@ namespace CES.Controller
         /// 如果考评的当前状态不是已开始，则返回空table
         /// </summary>
         /// <param name="table"></param>
+        /// <param name="evaluatorID">考评人ID</param>
         /// <param name="exception"></param>
-        public static bool GetAllForEvaluate(ref DataTable table, ref string exception)
+        public static bool GetAllForEvaluate(ref DataTable table, string evaluatorID, ref string exception)
         {
             table.Columns.Add("ID");
             table.Columns.Add("Name");
