@@ -44,7 +44,8 @@ namespace CES.UI.Pages.StaffManagement
                     Button_Submit.Enabled = false;
                     Label_FileName.Text = "";
                     FileUpload_ExcelFile.Reset();
-                    Alert.Show("无效的文件！", MessageBoxIcon.Error);
+                    //Alert.Show("无效的文件！", MessageBoxIcon.Error);
+                    showError("无效的文件！", "您选择的不是Excel文件");
                     return;
                 }
 
@@ -74,13 +75,15 @@ namespace CES.UI.Pages.StaffManagement
             if (StaffManagementCtrl.InportExcel(fileName, ref createCount, ref updateCount, ref exception))
             {
                 FileUpload_ExcelFile.Reset();
-                Alert.ShowInTop("上传成功！", MessageBoxIcon.Information);
+                //Alert.ShowInTop("上传成功！", MessageBoxIcon.Information);
+                showInformation("上传成功！");
                 bindStaffInfoToGrid();
             }
             else
             {
                 FileUpload_ExcelFile.Reset();
-                Alert.ShowInTop("上传失败！\n失败原因：" + exception, MessageBoxIcon.Error);
+                //Alert.ShowInTop("上传失败！\n失败原因：" + exception, MessageBoxIcon.Error);
+                showError("上传失败！", exception);
             }
         }
 
@@ -129,7 +132,8 @@ namespace CES.UI.Pages.StaffManagement
             string s = hfSelectedIDS.Text.Trim().TrimStart('[').TrimEnd(']');
             if (s == "")
             {
-                Alert.ShowInTop("请至少选择一项！", MessageBoxIcon.Information);
+                //Alert.ShowInTop("请至少选择一项！", MessageBoxIcon.Information);
+                showInformation("请至少选择一项！");
                 return;
             }
             List<string> IDs = new List<string>();
@@ -140,13 +144,15 @@ namespace CES.UI.Pages.StaffManagement
             }
             if (StaffManagementCtrl.DeleteByIDs(IDs, ref exception))
             {
-                Alert.ShowInTop("删除成功", MessageBoxIcon.Information);
+                //Alert.ShowInTop("删除成功", MessageBoxIcon.Information);
+                showInformation("删除成功！");
                 hfSelectedIDS.Text = "";
                 bindStaffInfoToGrid();
             }
             else
             {
-                Alert.ShowInTop("删除失败\n原因：" + exception, MessageBoxIcon.Error);
+                //Alert.ShowInTop("删除失败\n原因：" + exception, MessageBoxIcon.Error);
+                showError("删除失败！", exception);
             }
         }
 
@@ -179,6 +185,7 @@ namespace CES.UI.Pages.StaffManagement
             }
             else
             {
+                showError("获取员工信息失败！", exception);
                 table.Clear();
                 Grid1.DataSource = table;
                 Grid1.DataBind();
@@ -201,7 +208,8 @@ namespace CES.UI.Pages.StaffManagement
                 }
                 catch (Exception)
                 {
-                    Alert.ShowInTop("内部错误！\n错误原因：Json反序列化错误", MessageBoxIcon.Error);
+                    //Alert.ShowInTop("内部错误！\n错误原因：Json反序列化错误", MessageBoxIcon.Error);
+                    showError("内部错误！", "Json反序列化错误");
                     return null;
                 }
             }

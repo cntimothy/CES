@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MakeReport.aspx.cs" Inherits="CES.UI.Pages.ReportManagement.MakeReport" %>
+﻿<%@ Page Language="C#" ValidateRequest="false" AutoEventWireup="true" CodeBehind="MakeReport.aspx.cs" Inherits="CES.UI.Pages.ReportManagement.MakeReport" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -16,11 +16,11 @@
                 <Items>
                     <x:Toolbar ID="Toolbar1" runat="server">
                         <Items>
-                            <x:Button ID="Button_Refresh" runat="server" Text="刷新">
+                            <x:Button ID="Button_Refresh" runat="server" Text="刷新" OnClick="Button_Refresh_Click">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Save" runat="server" Text="保存">
+                            <x:Button ID="Button_Save" runat="server" Text="保存" OnClick="Button_Save_Click" Enabled="false">
                             </x:Button>
                         </Items>
                     </x:Toolbar>

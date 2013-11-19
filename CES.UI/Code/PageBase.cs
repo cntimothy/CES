@@ -122,6 +122,25 @@ namespace CES.UI
             string userID = Request.QueryString["userid"];
             ViewState["UserID"] = userID;
         }
+
+        /// <summary>
+        /// 显示错误信息
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="reason"></param>
+        protected void showError(string message, string reason)
+        {
+            Alert.ShowInTop(message + "\n原因：" + reason, MessageBoxIcon.Warning);
+        }
+
+        /// <summary>
+        /// 显示信息
+        /// </summary>
+        /// <param name="message"></param>
+        protected void showInformation(string message)
+        {
+            Alert.ShowInTop(message, MessageBoxIcon.Information);
+        }
         #endregion
     }
 

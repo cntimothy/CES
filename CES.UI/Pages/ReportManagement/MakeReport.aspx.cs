@@ -4,14 +4,100 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using CES.Controller;
+using FineUI;
+using CES.DataStructure;
 
 namespace CES.UI.Pages.ReportManagement
 {
-    public partial class MakeReport : System.Web.UI.Page
+    public partial class MakeReport : PageBase
     {
+        #region Page Init
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                //将UserID写入ViewState
+                setButton_Save();
+                WriteUserIDToViewState();
+                loadReport();
+            }
         }
+        #endregion
+
+        #region Event
+        /// <summary>
+        /// 刷新按钮事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void Button_Refresh_Click(object sender, EventArgs e)
+        {
+            loadReport();
+        }
+
+        /// <summary>
+        /// 保存按钮事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void Button_Save_Click(object sender, EventArgs e)
+        {
+            string exception = "";
+            string id = ViewState["UserID"].ToString();
+            string report = HtmlEditor_Report.Text;
+            if (ReportManagementCtrl.UpdateReportByID(id, report, ref exception))
+            {
+                showInformation("保存成功！");
+                return;
+            }
+            else
+            {
+                showError("保存失败！", exception);
+            }
+        }
+        #endregion
+
+        #region Private Method
+        /// <summary>
+        /// 载入述职报告
+        /// </summary>
+        private void loadReport()
+        {
+            string exception = "";
+            string id = ViewState["UserID"].ToString();
+            string report = "";
+            if(ReportManagementCtrl.GetReportByID(ref report, id, ref exception))
+            {
+                HtmlEditor_Report.Text = report;
+            }
+            else
+            {
+                HtmlEditor_Report.Text = "";
+                showError("获取述职报告失败！", exception);
+                return;
+            }
+        }
+
+        /// <summary>
+        /// 根据考评状态设置保存按钮的可读性
+        /// </summary>
+        private void setButton_Save()
+        {
+            string exception = "";
+            EvaluationStage evaluationStage = EvaluationStage.UNSTARTED;
+            if (CommonCtrl.GetCurrentStage(ref evaluationStage, ref exception))
+            {
+                if (evaluationStage == EvaluationStage.STARTED)
+                {
+                    Button_Save.Enabled = true;
+                }
+            }
+            else
+            {
+                showError("获取考评状态失败！", exception);
+            }
+        }
+        #endregion
     }
 }

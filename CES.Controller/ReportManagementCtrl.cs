@@ -17,6 +17,7 @@ namespace CES.Controller
         /// <returns></returns>
         public static bool GetReportByID(ref string report, string id, ref string exception)
         {
+            report = "gewagewga<b>gewagewga<br>geowpgaj<i>gewadca</i><br></b>";
             return true;
         }
 
