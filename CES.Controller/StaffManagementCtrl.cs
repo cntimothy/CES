@@ -101,7 +101,7 @@ namespace CES.Controller
         }
 
         /// <summary>
-        /// 根据ID更行某个员工的信息，更新成功返回true，否则返回false
+        /// 根据ID更新某个员工的信息，更新成功返回true，否则返回false
         /// </summary>
         /// <param name="staffInfo"></param>
         /// <param name="id"></param>

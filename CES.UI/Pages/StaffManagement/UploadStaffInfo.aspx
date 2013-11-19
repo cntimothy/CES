@@ -52,8 +52,7 @@
                                 <Items>
                                     <x:DropDownList ID="DropDownList_StaffType" runat="server" Label="请选择员工类型">
                                         <x:ListItem EnableSelect="true" Selected="true" Text="所有人" Value="0" />
-                                        <x:ListItem EnableSelect="true" Selected="false" Text="考评人" Value="1" />
-                                        <x:ListItem EnableSelect="true" Selected="false" Text="被考评人" Value="2" />
+                                        <x:ListItem EnableSelect="true" Selected="false" Text="中层干部" Value="1" />
                                     </x:DropDownList>
                                 </Items>
                             </x:SimpleForm>

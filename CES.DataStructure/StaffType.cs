@@ -8,7 +8,6 @@ namespace CES.DataStructure
     public enum StaffType
     {
         ALL,    //所有人
-        EVALUATOR,  //考评人
-        EVALUATED,  //被考评人
+        CADRES  //中层干部
     }
 }
