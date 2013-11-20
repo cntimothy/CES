@@ -101,5 +101,14 @@ namespace CES.UI.Pages.ReportManagement {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.HtmlEditor HtmlEditor_Report;
+        
+        /// <summary>
+        /// Label_Report 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Label Label_Report;
     }
 }

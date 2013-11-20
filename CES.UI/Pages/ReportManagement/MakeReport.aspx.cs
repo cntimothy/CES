@@ -17,9 +17,11 @@ namespace CES.UI.Pages.ReportManagement
         {
             if (!IsPostBack)
             {
-                //将UserID写入ViewState
-                setButton_Save();
+
+                //将UserID写入ViewState                
                 WriteUserIDToViewState();
+
+                setButton_Save();
                 loadReport();
             }
         }
@@ -67,9 +69,29 @@ namespace CES.UI.Pages.ReportManagement
             string exception = "";
             string id = ViewState["UserID"].ToString();
             string report = "";
-            if(ReportManagementCtrl.GetReportByID(ref report, id, ref exception))
+            if(ReportManagementCtrl.GetReportByID(ref report, id, ref exception)) //获取述职报告
             {
-                HtmlEditor_Report.Text = report;
+                exception = "";
+                EvaluationStage evaluationStage = EvaluationStage.UNSTARTED;
+                if (CommonCtrl.GetCurrentStage(ref evaluationStage, ref exception)) //获取当前考评状态
+                {
+                    if (evaluationStage == EvaluationStage.STARTED) //如果当前考评状态是已开始，则显示HTMLEdit，否则显示Label
+                    {
+                        HtmlEditor_Report.Visible = true;
+                        HtmlEditor_Report.Text = report;
+                    }
+                    else
+                    {
+                        Label_Report.Visible = true;
+                        Label_Report.Text = report;
+                    }
+                }
+                else
+                {
+                    HtmlEditor_Report.Text = "";
+                    showError("获取考评状态失败！", exception);
+                    return;
+                }
             }
             else
             {

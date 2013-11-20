@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" ValidateRequest="false" AutoEventWireup="true" CodeBehind="MakeReport.aspx.cs" Inherits="CES.UI.Pages.ReportManagement.MakeReport" %>
+﻿<%@ Page Language="C#" ValidateRequest="false" AutoEventWireup="true" CodeBehind="MakeReport.aspx.cs"
+    Inherits="CES.UI.Pages.ReportManagement.MakeReport" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -27,8 +28,11 @@
                     <x:Panel ID="Panel3" runat="server" BodyPadding="5px" ShowBorder="false" ShowHeader="false"
                         Title="Panel">
                         <Items>
-                    <x:HtmlEditor ID="HtmlEditor_Report" runat="server" Label="Label" Text="" Width="800px" Height="520px">
-                    </x:HtmlEditor>
+                            <x:HtmlEditor ID="HtmlEditor_Report" runat="server" Label="Label" Text="" Width="800px" Visible="false"
+                                Height="520px">
+                            </x:HtmlEditor>
+                            <x:Label ID="Label_Report" runat="server" EncodeText="false" Label="Label" Text="" Visible="false">
+                            </x:Label>
                         </Items>
                     </x:Panel>
                 </Items>
