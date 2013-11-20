@@ -12,42 +12,52 @@
         Title="Panel" Layout="Fit">
         <Items>
             <x:Panel ID="Panel2" runat="server" BodyPadding="0px" ShowBorder="false" ShowHeader="false"
-                Title="Panel">
+                Title="Panel" AutoScroll="true">
                 <Items>
                     <x:Toolbar ID="Toolbar1" runat="server">
                         <Items>
-                            <x:Button ID="Button_Refresh" runat="server" Text="刷新">
+                            <x:Button ID="Button_Refresh" runat="server" Text="刷新" OnClick="Button_Refresh_Click">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Send" runat="server" Text="发送">
+                            <x:Button ID="Button_Send" runat="server" Text="发送" OnClick="Button_Send_Click">
                             </x:Button>
                         </Items>
                     </x:Toolbar>
                     <x:Panel ID="Panel3" runat="server" BodyPadding="5px" ShowBorder="false" ShowHeader="false"
-                        Title="Panel" Layout="Column">
+                        Title="Panel" Layout="Column" Width="1100px">
                         <Items>
                             <x:Grid ID="Grid1" runat="server" Title="员工名单" AllowPaging="true" PageSize="20" EnableRowNumber="true"
                                 Height="520px" AutoScroll="true" DataKeyNames="ID" EnableCheckBoxSelect="true"
                                 CheckBoxSelectOnly="true" OnPageIndexChange="Grid1_PageIndexChange" ClearSelectedRowsAfterPaging="false"
-                                Width="800px">
+                                Width="700px">
                                 <Columns>
-                                    <x:BoundField Width="150px" DataField="ID" DataFormatString="{0}" HeaderText="工号"
+                                    <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="工号"
                                         Hidden="false" />
-                                    <x:BoundField Width="200px" DataField="Name" DataFormatString="{0}" HeaderText="姓名"
+                                    <x:BoundField Width="100px" DataField="Name" DataFormatString="{0}" HeaderText="姓名"
                                         Hidden="false" />
                                     <x:BoundField Width="50px" DataField="Sex" DataFormatString="{0}" HeaderText="性别"
                                         Hidden="false" />
-                                    <x:BoundField Width="200px" DataField="Job" DataFormatString="{0}" HeaderText="职务"
+                                    <x:BoundField Width="150px" DataField="Job" DataFormatString="{0}" HeaderText="职务"
                                         Hidden="false" />
-                                    <x:BoundField Width="150px" DataField="Role" DataFormatString="{0}" HeaderText="分类"
+                                    <x:BoundField Width="50px" DataField="Role" DataFormatString="{0}" HeaderText="分类"
                                         Hidden="false" />
-                                    <x:BoundField Width="300px" DataField="Tele" DataFormatString="{0}" HeaderText="电话"
-                                        Hidden="false" />
+                                    <x:BoundField Width="200px" ExpandUnusedSpace="true" DataField="Tele" DataFormatString="{0}"
+                                        HeaderText="电话" Hidden="false" />
                                 </Columns>
                             </x:Grid>
-                            <x:TextArea ID="TextArea1" runat="server" Label="Label" Text="" Width="300px" Height="200px" EmptyText="请输入短信内容，系统将在短信后面自动加上用户名和密码。">
-                            </x:TextArea>
+                            <x:HiddenField ID="hfSelectedIDS" runat="server">
+                            </x:HiddenField>
+                            <x:Panel ID="Panel4" runat="server" BodyPadding="5px" ShowBorder="false" ShowHeader="false"
+                                Title="Panel">
+                                <Items>
+                                    <x:TextArea ID="TextArea_Msg" runat="server" Label="Label" Text="" Width="300px"
+                                        Height="200px" EmptyText="请输入短信内容">
+                                    </x:TextArea>
+                                    <x:CheckBox ID="CheckBox_AddMsg" runat="server" Label="Label" Text="是否自动加用户名和密码">
+                                    </x:CheckBox>
+                                </Items>
+                            </x:Panel>
                         </Items>
                     </x:Panel>
                 </Items>

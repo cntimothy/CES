@@ -103,12 +103,39 @@ namespace CES.UI.Pages.MsgManagement {
         protected global::FineUI.Grid Grid1;
         
         /// <summary>
-        /// TextArea1 控件。
+        /// hfSelectedIDS 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.TextArea TextArea1;
+        protected global::FineUI.HiddenField hfSelectedIDS;
+        
+        /// <summary>
+        /// Panel4 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Panel Panel4;
+        
+        /// <summary>
+        /// TextArea_Msg 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_Msg;
+        
+        /// <summary>
+        /// CheckBox_AddMsg 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.CheckBox CheckBox_AddMsg;
     }
 }

@@ -13,10 +13,9 @@ namespace CES.Controller
         /// 获取指定类型的员工信息，查询成功且不为空返回true，否则返回false
         /// </summary>
         /// <param name="table">包含返回信息(ID, Name, Sex, Job, Role, Tele)</param>
-        /// <param name="staffType">员工类型（所有人、考评人、被考评人）</param>
         /// <param name="exception"></param>
         /// <returns></returns>
-        public static bool GetAll(ref DataTable table, StaffType staffType, ref string exception)
+        public static bool GetAll(ref DataTable table, ref string exception)
         {
             table.Columns.Add("ID");
             table.Columns.Add("Name");
@@ -55,6 +54,37 @@ namespace CES.Controller
             string[] row29 = new string[] { "0029", "高1", "女", "职务1", "群众", "13820000000" };
             string[] row30 = new string[] { "0030", "高1", "女", "职务1", "群众", "13820000000" };
             string[] row31 = new string[] { "0031", "高1", "女", "职务1", "群众", "13820000000" };
+            table.Rows.Add(row1);
+            table.Rows.Add(row2);
+            table.Rows.Add(row3);
+            table.Rows.Add(row4);
+            table.Rows.Add(row5);
+            table.Rows.Add(row6);
+            table.Rows.Add(row7);
+            table.Rows.Add(row8);
+            table.Rows.Add(row9);
+            table.Rows.Add(row10);
+            table.Rows.Add(row11);
+            table.Rows.Add(row12);
+            table.Rows.Add(row13);
+            table.Rows.Add(row14);
+            table.Rows.Add(row15);
+            table.Rows.Add(row16);
+            table.Rows.Add(row17);
+            table.Rows.Add(row18);
+            table.Rows.Add(row19);
+            table.Rows.Add(row20);
+            table.Rows.Add(row21);
+            table.Rows.Add(row22);
+            table.Rows.Add(row23);
+            table.Rows.Add(row24);
+            table.Rows.Add(row25);
+            table.Rows.Add(row26);
+            table.Rows.Add(row27);
+            table.Rows.Add(row28);
+            table.Rows.Add(row29);
+            table.Rows.Add(row30);
+            table.Rows.Add(row31);
             return true;
         }
 
@@ -63,9 +93,10 @@ namespace CES.Controller
         /// </summary>
         /// <param name="IDList">指定的ID</param>
         /// <param name="msg">短信内容</param>
+        /// <param name="addMsg">是否自动加上用户名和密码</param>
         /// <param name="excpetion"></param>
         /// <returns></returns>
-        public static bool SendMsgByIDs(List<string> IDList, string msg, ref string excpetion)
+        public static bool SendMsgByIDs(List<string> IDList, string msg, bool addMsg, ref string excpetion)
         {
             return true;
         }
