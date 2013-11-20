@@ -15,7 +15,7 @@ namespace CES.Controller
         /// <param name="oldPassword"></param>
         /// <param name="exception"></param>
         /// <returns></returns>
-        public static bool ChangePassword(string id, string newPassword, string oldPassword, ref string exception)
+        public static bool ChangePasswd(string id, string newPassword, string oldPassword, ref string exception)
         {
             return true;
         }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using CES.DataStructure;
+using System.IO;
 
 namespace CES.Controller
 {
@@ -46,6 +47,40 @@ namespace CES.Controller
         /// <param name="exception"></param>
         /// <returns></returns>
         public static bool StopEvaluation(ref string exception)
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 删除所有临时文件，成功返回true，否则返回false。（这个我来实现）
+        /// </summary>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static bool ClearTempFiles(ref string exception)
+        {
+            DirectoryInfo folder = new DirectoryInfo(System.AppDomain.CurrentDomain.BaseDirectory.ToString() + @"downloadfiles\");
+            FileInfo[] files = folder.GetFiles();
+            try
+            {
+                foreach (FileInfo file in files)
+                {
+                    file.Delete();
+                }
+            }
+            catch (Exception e)
+            {
+                exception = e.Message;
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// 清空所有数据，成功返回true，否则返回false
+        /// </summary>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static bool ClearDataBase(ref string exception)
         {
             return true;
         }
