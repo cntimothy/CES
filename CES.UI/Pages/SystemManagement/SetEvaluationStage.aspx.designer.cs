@@ -58,13 +58,13 @@ namespace CES.UI.Pages.SystemManagement {
         protected global::FineUI.Toolbar Toolbar1;
         
         /// <summary>
-        /// Button1 控件。
+        /// Button_Refresh 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button Button1;
+        protected global::FineUI.Button Button_Refresh;
         
         /// <summary>
         /// ToolbarSeparator1 控件。
@@ -76,13 +76,13 @@ namespace CES.UI.Pages.SystemManagement {
         protected global::FineUI.ToolbarSeparator ToolbarSeparator1;
         
         /// <summary>
-        /// Button2 控件。
+        /// Button_Init 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button Button2;
+        protected global::FineUI.Button Button_Init;
         
         /// <summary>
         /// ToolbarSeparator2 控件。
@@ -94,13 +94,13 @@ namespace CES.UI.Pages.SystemManagement {
         protected global::FineUI.ToolbarSeparator ToolbarSeparator2;
         
         /// <summary>
-        /// Button3 控件。
+        /// Button_Start 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button Button3;
+        protected global::FineUI.Button Button_Start;
         
         /// <summary>
         /// ToolbarSeparator3 控件。
@@ -112,13 +112,13 @@ namespace CES.UI.Pages.SystemManagement {
         protected global::FineUI.ToolbarSeparator ToolbarSeparator3;
         
         /// <summary>
-        /// Button4 控件。
+        /// Button_Stop 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button Button4;
+        protected global::FineUI.Button Button_Stop;
         
         /// <summary>
         /// Panel3 控件。
@@ -139,13 +139,13 @@ namespace CES.UI.Pages.SystemManagement {
         protected global::FineUI.SimpleForm SimpleForm1;
         
         /// <summary>
-        /// Label1 控件。
+        /// Label_EvaluationStage 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label Label1;
+        protected global::FineUI.Label Label_EvaluationStage;
         
         /// <summary>
         /// Grid1 控件。

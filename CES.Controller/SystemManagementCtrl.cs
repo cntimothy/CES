@@ -18,6 +18,28 @@ namespace CES.Controller
         /// <returns></returns>
         public static bool GetAll(ref DataTable table, ref string exception)
         {
+            table.Columns.Add("ID");
+            table.Columns.Add("Name");
+            table.Columns.Add("Sex");
+            table.Columns.Add("Job");
+            table.Columns.Add("Status");
+            string[] row1 = new string[] { "001", "高1", "男", "职务1", "领导：3/24，中层干部：9/13，群众：67/90" };
+            string[] row2 = new string[] { "002", "高1", "男", "职务1", "领导：3/24，中层干部：9/13，群众：67/90" };
+            string[] row3 = new string[] { "003", "高1", "男", "职务1", "领导：3/24，中层干部：9/13，群众：67/90" };
+            string[] row4 = new string[] { "004", "高1", "男", "职务1", "领导：3/24，中层干部：9/13，群众：67/90" };
+            string[] row5 = new string[] { "005", "高1", "男", "职务1", "领导：3/24，中层干部：9/13，群众：67/90" };
+            string[] row6 = new string[] { "006", "高1", "男", "职务1", "领导：3/24，中层干部：9/13，群众：67/90" };
+            string[] row7 = new string[] { "007", "高1", "男", "职务1", "领导：3/24，中层干部：9/13，群众：67/90" };
+            string[] row8 = new string[] { "008", "高1", "男", "职务1", "领导：3/24，中层干部：9/13，群众：67/90" };
+
+            table.Rows.Add(row1);
+            table.Rows.Add(row2);
+            table.Rows.Add(row3);
+            table.Rows.Add(row4);
+            table.Rows.Add(row5);
+            table.Rows.Add(row6);
+            table.Rows.Add(row7);
+            table.Rows.Add(row8);
             return true;
         }
 
