@@ -69,7 +69,7 @@ namespace CES.UI.Pages.ReportManagement
             string exception = "";
             string id = ViewState["UserID"].ToString();
             string report = "";
-            if(ReportManagementCtrl.GetReportByID(ref report, id, ref exception)) //获取述职报告
+            if(CommonCtrl.GetReportByID(ref report, id, ref exception)) //获取述职报告
             {
                 exception = "";
                 EvaluationStage evaluationStage = EvaluationStage.UNSTARTED;
