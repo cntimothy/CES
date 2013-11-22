@@ -1887,6 +1887,7 @@
     <Content Include="Pages\EvaluateTblManagement\MakeEvaluateTbl.aspx" />
     <Content Include="Pages\EvaluationManagement\CheckResult.aspx" />
     <Content Include="Pages\EvaluationManagement\Evaluate.aspx" />
+    <Content Include="Pages\EvaluationManagement\iframe_Evaluate.aspx" />
     <Content Include="Pages\HomePage.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Pages\MsgManagement\SendMsg.aspx" />
@@ -1948,6 +1949,13 @@
     </Compile>
     <Compile Include="Pages\EvaluationManagement\Evaluate.aspx.designer.cs">
       <DependentUpon>Evaluate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EvaluationManagement\iframe_Evaluate.aspx.cs">
+      <DependentUpon>iframe_Evaluate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EvaluationManagement\iframe_Evaluate.aspx.designer.cs">
+      <DependentUpon>iframe_Evaluate.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>

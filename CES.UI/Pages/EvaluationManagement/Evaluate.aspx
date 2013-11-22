@@ -16,25 +16,26 @@
                 <Items>
                     <x:Toolbar ID="Toolbar1" runat="server">
                         <Items>
-                            <x:Button ID="Button_Refresh" runat="server" Text="刷新">
+                            <x:Button ID="Button_Refresh" runat="server" Text="刷新" OnClick="Button_Refresh_Click">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Submit" runat="server" Text="提交">
+                            <x:Button ID="Button_Submit" runat="server" Text="提交" ConfirmText="确定提交？" OnClick="Button_Submit_Click">
                             </x:Button>
                         </Items>
                     </x:Toolbar>
                     <x:Panel ID="Panel3" runat="server" BodyPadding="5px" ShowBorder="false" ShowHeader="false"
-                        Title="Panel">
+                        Title="Panel" Width="700px">
                         <Items>
                             <x:SimpleForm ID="SimpleForm1" runat="server" BodyPadding="5px" Title="SimpleForm"
                                 ShowBorder="false" ShowHeader="false">
                                 <Items>
-                                    <x:Label ID="Label1" runat="server" Label="当前考评状态" Text="***">
+                                    <x:Label ID="Label_EvaluationStage" runat="server" Label="当前考评状态" Text="***">
                                     </x:Label>
                                 </Items>
                             </x:SimpleForm>
-                            <x:Grid ID="Grid1" runat="server" Title="被考评人名单">
+                            <x:Grid ID="Grid1" runat="server" Title="被考评人名单" Width="650px" EnableRowNumber="true"
+                                DataKeyNames="ID,Name" AutoHeight="true">
                                 <Columns>
                                     <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="工号"
                                         Hidden="false" />
@@ -42,10 +43,13 @@
                                         Hidden="false" />
                                     <x:BoundField Width="50px" DataField="Sex" DataFormatString="{0}" HeaderText="性别"
                                         Hidden="false" />
-                                    <x:BoundField Width="200px" DataField="Job" DataFormatString="{0}" HeaderText="职务"
-                                        Hidden="false" />
+                                    <x:BoundField Width="150px" ExpandUnusedSpace="true" DataField="Job" DataFormatString="{0}"
+                                        HeaderText="职务" Hidden="false" />
                                     <x:BoundField Width="150px" DataField="Status" DataFormatString="{0}" HeaderText="当前状态"
                                         Hidden="false" />
+                                    <x:WindowField TextAlign="Center" Width="50px" WindowID="Window_Evaluate" Text="考评"
+                                        ToolTip="开始考评" DataIFrameUrlFields="ID,Name" DataIFrameUrlFormatString="iframe_Evaluate.aspx?id={0}&name={1}"
+                                        Title="操作" IFrameUrl="iframe_Evaluate.aspx" />
                                 </Columns>
                             </x:Grid>
                         </Items>
@@ -54,6 +58,11 @@
             </x:Panel>
         </Items>
     </x:Panel>
+    <x:Window ID="Window_Evaluate" Title="考评" Popup="false" EnableIFrame="true" IFrameUrl="about:blank"
+        EnableMaximize="true" Target="Top" EnableResize="true" runat="server" EnableClose="true"
+        OnClose="Window_Evaluate_Close" IsModal="true" Width="900px" EnableConfirmOnClose="true"
+        Height="550px">
+    </x:Window>
     </form>
 </body>
 </html>

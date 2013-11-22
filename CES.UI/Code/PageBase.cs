@@ -141,6 +141,20 @@ namespace CES.UI
         {
             Alert.ShowInTop(message, MessageBoxIcon.Information);
         }
+
+        protected string GetScore(object Score)
+        {
+            string returnValue = "";
+            if (Score.ToString() == "-1")
+            {
+                returnValue = "";
+            }
+            else
+            {
+                returnValue = Score.ToString(); ;
+            }
+            return returnValue;
+        }
         #endregion
     }
 

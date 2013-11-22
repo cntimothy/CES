@@ -135,7 +135,6 @@ namespace CES.UI.Pages.SystemManagement
             }
         }
 
-
         /// <summary>
         /// 设置当前考评状态Label
         /// </summary>

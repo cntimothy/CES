@@ -103,13 +103,13 @@ namespace CES.UI.Pages.EvaluationManagement {
         protected global::FineUI.SimpleForm SimpleForm1;
         
         /// <summary>
-        /// Label1 控件。
+        /// Label_EvaluationStage 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label Label1;
+        protected global::FineUI.Label Label_EvaluationStage;
         
         /// <summary>
         /// Grid1 控件。
@@ -119,5 +119,14 @@ namespace CES.UI.Pages.EvaluationManagement {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.Grid Grid1;
+        
+        /// <summary>
+        /// Window_Evaluate 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Window Window_Evaluate;
     }
 }

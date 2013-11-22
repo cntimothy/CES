@@ -78,8 +78,8 @@ namespace CES.Controller
             evaluateTbl.Attitude.Add(new Quota("进取心", new string[] { "有强烈的使命感和事业心，主动迎接工作挑战", "具备较强的事业心，坚持学习吸收新知识", "具有一定的事业心，能主动学习，注重自己能力提高", "满足现状，局限于完成现有工作" }, 78));
             evaluateTbl.Attitude.Add(new Quota("主动性及执行力", new string[] { "能够认真主动地开展工作、执行领导的工作安排，积极解决问题，工作效果很好", "能够执行领导的工作安排，并能在规定的时间内完成，效果较好", "能够执行领导的工作安排，通常能在规定的时间内完成", "经常不接受领导安排的工作或越级汇报；阳奉阴违、影响部门工作开展；工作需经常督促才能勉强完成" }, 80));
 
-            evaluateTbl.Reject.Add(new Quota("严重违反规章制度", new string[] { "累计旷工3天以上的；违背职业道德，向病人及家属收取红包；严重失职，营私舞弊，给本单位造成3000元以上经济损失或者其它严重后果的；被依法追究刑事责任的" }, -1));
-            evaluateTbl.Reject.Add(new Quota("其他", new string[] { "" }, -1));
+            evaluateTbl.Reject.Add(new Quota("严重违反规章制度", new string[] { "累计旷工3天以上的；违背职业道德，向病人及家属收取红包；严重失职，营私舞弊，给本单位造成3000元以上经济损失或者其它严重后果的；被依法追究刑事责任的" }, -10));
+            evaluateTbl.Reject.Add(new Quota("其他", new string[] { "" }, 0));
             return true;
         }
 
