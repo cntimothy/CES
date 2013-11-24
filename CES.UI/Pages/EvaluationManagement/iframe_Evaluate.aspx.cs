@@ -8,6 +8,7 @@ using FineUI;
 using System.Data;
 using CES.DataStructure;
 using CES.Controller;
+using System.Text.RegularExpressions;
 
 namespace CES.UI.Pages.EvaluationManagement
 {
@@ -27,6 +28,36 @@ namespace CES.UI.Pages.EvaluationManagement
         #endregion
 
         #region Event
+        /// <summary>
+        /// 保存按钮事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void Button_Save_Click(object sender, EventArgs e)
+        {
+            string exception = "";
+            EvaluateTbl evaluateTbl = new EvaluateTbl();
+            string evaluatorID = getEvaluatorID();  //考评人ID
+            string evaluatedID = ViewState["EvaluatedID"].ToString();   //被考评人ID
+            if (getEvaluateTbl(ref evaluateTbl, ref exception))
+            {
+                if (EvaluationManagementCtrl.UpdateScoreByID(evaluateTbl, evaluatorID, evaluatedID, ref exception))
+                {
+                    showInformation("保存成功！");
+                    return;
+                }
+                else
+                {
+                    showError("保存失败！", exception);
+                    return;
+                }
+            }
+            else
+            {
+                showError("保存失败！", exception);
+                return;
+            }
+        }
         #endregion
 
         #region Prvate Method
@@ -170,11 +201,243 @@ namespace CES.UI.Pages.EvaluationManagement
             {
                 returnValue = Session["UserID"].ToString();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 PageContext.Redirect("../../Login.aspx");
             }
             return returnValue;
+        }
+
+        /// <summary>
+        /// 检测字符串是否为表示整数,是整数返回true，否则返回false
+        /// </summary>
+        /// <param name="items"></param>
+        /// <returns></returns>
+        private bool isNumber(string[] items)
+        {
+            string pattern = @"^\d*$";
+            foreach (string item in items)
+            {
+                if (!Regex.IsMatch(item, pattern))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// 检测字符串表示的数字是否在0~10之间（包括0和10），是则返回true，否则返回false
+        /// </summary>
+        /// <param name="items"></param>
+        /// <returns></returns>
+        private bool isProperty(string[] items)
+        {
+            foreach (string item in items)
+            {
+                if (item == "") //如果为空，也认为是正确的
+                {
+                    return true;
+                }
+                int i = Convert.ToInt32(item);
+                if (i < 0 || i > 10)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// 从页面中获取分数并检查分数是否合法，合法返回true，否则返回false
+        /// </summary>
+        /// <param name="evaluateTbl"></param>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        private bool getEvaluateTbl(ref EvaluateTbl evaluateTbl, ref string exception)
+        {
+            bool returnValue = true;
+            List<string> tempScores = new List<string>(); //临时存储分数的List
+            //关键岗位职责指标
+            for (int i = 0; i < Grid1.Rows.Count; i++)
+            {
+                GridRow row = Grid1.Rows[i];
+                System.Web.UI.WebControls.TextBox tb = row.FindControl("TextBox_Score1") as System.Web.UI.WebControls.TextBox;
+                tempScores.Add(tb.Text.Trim());
+            }
+            if (!checkScores(tempScores, ref exception))
+            {
+                returnValue = false;
+                return returnValue;
+            }
+            else
+            {
+                foreach (string score in tempScores)
+                {
+                    evaluateTbl.KeyResponse.Add(new Quota("", new string[] { "" }, getScoreFormStr(score)));
+                }
+                tempScores.Clear();
+            }
+
+            //关键岗位胜任能力指标
+            for (int i = 0; i < Grid2.Rows.Count; i++)
+            {
+                GridRow row = Grid2.Rows[i];
+                System.Web.UI.WebControls.TextBox tb = row.FindControl("TextBox_Score2") as System.Web.UI.WebControls.TextBox;
+                tempScores.Add(tb.Text.Trim());
+            }
+            if (!checkScores(tempScores, ref exception))
+            {
+                returnValue = false;
+                return returnValue;
+            }
+            else
+            {
+                foreach (string score in tempScores)
+                {
+                    evaluateTbl.KeyQualify.Add(new Quota("", new string[] { "" }, getScoreFormStr(score)));
+                }
+                tempScores.Clear();
+            }
+
+            //关键工作态度指标
+            for (int i = 0; i < Grid3.Rows.Count; i++)
+            {
+                GridRow row = Grid3.Rows[i];
+                System.Web.UI.WebControls.TextBox tb = row.FindControl("TextBox_Score3") as System.Web.UI.WebControls.TextBox;
+                tempScores.Add(tb.Text.Trim());
+            }
+            if (!checkScores(tempScores, ref exception))
+            {
+                returnValue = false;
+                return returnValue;
+            }
+            else
+            {
+                foreach (string score in tempScores)
+                {
+                    evaluateTbl.KeyAttitude.Add(new Quota("", new string[] { "" }, getScoreFormStr(score)));
+                }
+                tempScores.Clear();
+            }
+
+            //岗位职责指标
+            for (int i = 0; i < Grid4.Rows.Count; i++)
+            {
+                GridRow row = Grid4.Rows[i];
+                System.Web.UI.WebControls.TextBox tb = row.FindControl("TextBox_Score4") as System.Web.UI.WebControls.TextBox;
+                tempScores.Add(tb.Text.Trim());
+            }
+            if (!checkScores(tempScores, ref exception))
+            {
+                returnValue = false;
+                return returnValue;
+            }
+            else
+            {
+                foreach (string score in tempScores)
+                {
+                    evaluateTbl.Response.Add(new Quota("", new string[] { "" }, getScoreFormStr(score)));
+                }
+                tempScores.Clear();
+            }
+
+            //岗位胜任能力指标
+            for (int i = 0; i < Grid5.Rows.Count; i++)
+            {
+                GridRow row = Grid5.Rows[i];
+                System.Web.UI.WebControls.TextBox tb = row.FindControl("TextBox_Score5") as System.Web.UI.WebControls.TextBox;
+                tempScores.Add(tb.Text.Trim());
+            }
+            if (!checkScores(tempScores, ref exception))
+            {
+                returnValue = false;
+                return returnValue;
+            }
+            else
+            {
+                foreach (string score in tempScores)
+                {
+                    evaluateTbl.Qualify.Add(new Quota("", new string[] { "" }, getScoreFormStr(score)));
+                }
+                tempScores.Clear();
+            }
+
+            //工作态度指标
+            for (int i = 0; i < Grid6.Rows.Count; i++)
+            {
+                GridRow row = Grid6.Rows[i];
+                System.Web.UI.WebControls.TextBox tb = row.FindControl("TextBox_Score6") as System.Web.UI.WebControls.TextBox;
+                tempScores.Add(tb.Text.Trim());
+            }
+            if (!checkScores(tempScores, ref exception))
+            {
+                returnValue = false;
+                return returnValue;
+            }
+            else
+            {
+                foreach (string score in tempScores)
+                {
+                    evaluateTbl.Attitude.Add(new Quota("", new string[] { "" }, getScoreFormStr(score)));
+                }
+                tempScores.Clear();
+            }
+
+            //否决指标
+            GridRow gridRow = Grid7.Rows[0];
+            System.Web.UI.WebControls.DropDownList ddl = gridRow.FindControl("DropDownList_Reject") as System.Web.UI.WebControls.DropDownList;
+            tempScores.Add(ddl.SelectedValue);
+            if (!checkScores(tempScores, ref exception))
+            {
+                returnValue = false;
+                return returnValue;
+            }
+            else
+            {
+                evaluateTbl.Reject.Add(new Quota("", new string[] { "" }, getScoreFormStr(tempScores[0])));
+                tempScores.Clear();
+            }
+
+            return returnValue;
+        }
+
+        /// <summary>
+        /// 检查分数是否合法，不合法返回false，并在exception中注明原因
+        /// </summary>
+        /// <param name="scoreList"></param>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        private bool checkScores(List<string> scoreList, ref string exception)
+        {
+            if (!isNumber(scoreList.ToArray()))
+            {
+                exception = "有项目为非数字！";
+                return false;
+            }
+            if (!isProperty(scoreList.ToArray()))
+            {
+                exception = "有项目的分数不在0~10之间！";
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// 从字符串中获取整型分数，如果是空字符串，返回-1
+        /// </summary>
+        /// <param name="score"></param>
+        /// <returns></returns>
+        private int getScoreFormStr(string score)
+        {
+            if (score == "")
+            {
+                return -1;
+            }
+            else
+            {
+                return Int32.Parse(score);
+            }
         }
         #endregion
     }
