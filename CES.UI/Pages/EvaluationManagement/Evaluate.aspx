@@ -47,6 +47,9 @@
                                         HeaderText="职务" Hidden="false" />
                                     <x:BoundField Width="150px" DataField="Status" DataFormatString="{0}" HeaderText="当前状态"
                                         Hidden="false" />
+                                    <x:WindowField TextAlign="Center" Width="80px" WindowID="Window_ShowReport" Text="自述报告"
+                                        ToolTip="查看自述报告" DataIFrameUrlFields="ID,Name" DataIFrameUrlFormatString="iframe_ShowReport.aspx?id={0}&name={1}"
+                                        Title="操作" IFrameUrl="iframe_ShowReport.aspx" />
                                     <x:WindowField TextAlign="Center" Width="50px" WindowID="Window_Evaluate" Text="考评"
                                         ToolTip="开始考评" DataIFrameUrlFields="ID,Name" DataIFrameUrlFormatString="iframe_Evaluate.aspx?id={0}&name={1}"
                                         Title="操作" IFrameUrl="iframe_Evaluate.aspx" />
@@ -58,6 +61,11 @@
             </x:Panel>
         </Items>
     </x:Panel>
+    <x:Window ID="Window_ShowReport" Title="自述报告" Popup="false" EnableIFrame="true" IFrameUrl="about:blank"
+        EnableMaximize="true" Target="Top" EnableResize="true" runat="server" EnableClose="true"
+        IsModal="true" Width="800px" EnableConfirmOnClose="true"
+        Height="550px">
+    </x:Window>
     <x:Window ID="Window_Evaluate" Title="考评" Popup="false" EnableIFrame="true" IFrameUrl="about:blank"
         EnableMaximize="true" Target="Top" EnableResize="true" runat="server" EnableClose="true"
         OnClose="Window_Evaluate_Close" IsModal="true" Width="900px" EnableConfirmOnClose="true"
