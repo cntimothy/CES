@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using CES.DataStructure;
+using NPOI.HSSF.UserModel;
+using NPOI.SS.UserModel;
+using NPOI.SS.Util;
+using System.IO;
 
 namespace CES.Controller
 {
@@ -162,7 +166,116 @@ namespace CES.Controller
 
         public static bool ExportToExcel(ref string fileName, DataTable table, ref string exception)
         {
-            throw new NotImplementedException();
+            bool returnValue = true;
+            HSSFWorkbook hssfworkbook = new HSSFWorkbook();
+            //manageDataTable(ref table);
+            createSheetFromDataTable("结果", "考评结果", hssfworkbook, table);  //建立sheet
+
+            fileName = DateTime.Now.ToString("yyyy-mm-dd-HH-mm-ss") + @"考评结果.xls";
+            string path = System.AppDomain.CurrentDomain.BaseDirectory.ToString() + @"downloadfiles\" + fileName;
+            FileStream file = new FileStream(path, FileMode.Create);
+            try
+            {
+                hssfworkbook.Write(file);
+            }
+            catch (Exception e)
+            {
+                exception = e.Message;
+                returnValue = false;
+            }
+            finally
+            {
+                file.Close();
+            }
+            return returnValue;
         }
+
+        #region Private Method
+        /// <summary>
+        /// 根据DataTable项workBook中添加sheet，sheet中的列名即为DataTable中的列明
+        /// </summary>
+        /// <param name="sheetName">sheet的名称</param>
+        /// <param name="title">sheet中的标题</param>
+        /// <param name="workBook"></param>
+        /// <param name="table"></param>
+        private static void createSheetFromDataTable(string sheetName, string title, HSSFWorkbook workBook, DataTable table)
+        {
+            ISheet sheet = workBook.CreateSheet(sheetName);
+
+            int columnsCount = table.Columns.Count;
+
+            CellRangeAddress region;
+
+            //标题格式（居中加黑大字）
+            ICellStyle titleStyle = workBook.CreateCellStyle();
+            titleStyle.Alignment = HorizontalAlignment.CENTER;
+            titleStyle.VerticalAlignment = VerticalAlignment.CENTER;
+            IFont titleFont = workBook.CreateFont();
+            titleFont.FontName = "宋体";
+            titleFont.FontHeightInPoints = 22;
+            titleFont.Boldweight = (short)FontBoldWeight.BOLD;
+            titleStyle.SetFont(titleFont);
+
+            //表头格式（居中加黑小字）
+            ICellStyle normalBoldStyle = workBook.CreateCellStyle();
+            normalBoldStyle.Alignment = HorizontalAlignment.CENTER;
+            normalBoldStyle.VerticalAlignment = VerticalAlignment.CENTER;
+            IFont normalBoldFont = workBook.CreateFont();
+            normalBoldFont.FontName = "宋体";
+            normalBoldFont.FontHeightInPoints = 10;
+            normalBoldFont.Boldweight = (short)FontBoldWeight.BOLD;
+            normalBoldStyle.SetFont(normalBoldFont);
+            normalBoldStyle.BorderTop = BorderStyle.THIN;
+            normalBoldStyle.BorderBottom = BorderStyle.THIN;
+            normalBoldStyle.BorderLeft = BorderStyle.THIN;
+            normalBoldStyle.BorderRight = BorderStyle.THIN;
+
+            //内容格式（居左不加黑小字）
+            ICellStyle normalStyle = workBook.CreateCellStyle();
+            normalStyle.Alignment = HorizontalAlignment.LEFT;
+            normalStyle.VerticalAlignment = VerticalAlignment.CENTER;
+            IFont NormalFont = workBook.CreateFont();
+            NormalFont.FontName = "宋体";
+            NormalFont.FontHeightInPoints = 10;
+            normalStyle.SetFont(NormalFont);
+            normalStyle.BorderTop = BorderStyle.THIN;
+            normalStyle.BorderBottom = BorderStyle.THIN;
+            normalStyle.BorderLeft = BorderStyle.THIN;
+            normalStyle.BorderRight = BorderStyle.THIN;
+
+            //标题行
+            IRow row0 = sheet.CreateRow(0);
+            row0.HeightInPoints = 40;
+            ICell cell00 = row0.CreateCell(0);
+            cell00.SetCellValue(title);
+            cell00.CellStyle = titleStyle;
+            region = new CellRangeAddress(0, 0, 0, columnsCount - 1);
+            sheet.AddMergedRegion(region);
+
+            //表头
+            IRow row1 = sheet.CreateRow(1);
+            row1.HeightInPoints = 30;
+            int columnIndex = 0;
+            foreach (DataColumn column in table.Columns)
+            {
+                ICell cell = row1.CreateCell(columnIndex);
+                cell.SetCellValue(column.ColumnName);
+                cell.CellStyle = normalBoldStyle;
+                columnIndex++;
+            }
+
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                IRow row = sheet.CreateRow(i + 2);
+                row.HeightInPoints = 25;
+                for (int j = 0; j < table.Columns.Count; j++)
+                {
+                    ICell cell = row.CreateCell(j);
+                    cell.SetCellValue(table.Rows[i][j].ToString());
+                    cell.CellStyle = normalStyle;
+                }
+            }
+        }
+        #endregion
     }
 }

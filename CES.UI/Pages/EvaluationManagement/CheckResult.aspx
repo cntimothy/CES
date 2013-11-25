@@ -20,7 +20,7 @@
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Export" runat="server" Text="导出" ConfirmText="确定导出？" OnClick="Button_Export_Click">
+                            <x:Button ID="Button_Export" runat="server" EnableAjax="false" Text="导出" ConfirmText="确定导出？" OnClick="Button_Export_Click">
                             </x:Button>
                         </Items>
                     </x:Toolbar>
@@ -45,13 +45,13 @@
                                         Hidden="false" />
                                     <x:BoundField Width="150px" ExpandUnusedSpace="true" DataField="Job" DataFormatString="{0}"
                                         HeaderText="职务" Hidden="false" />
-                                    <x:BoundField Width="100px" DataField="Job" DataFormatString="{0}" HeaderText="领导"
+                                    <x:BoundField Width="100px" DataField="Leader" DataFormatString="{0}" HeaderText="领导"
                                         Hidden="false" />
-                                    <x:BoundField Width="100px" DataField="Job" DataFormatString="{0}" HeaderText="中层干部"
+                                    <x:BoundField Width="100px" DataField="Cadres" DataFormatString="{0}" HeaderText="中层干部"
                                         Hidden="false" />
-                                    <x:BoundField Width="100px" DataField="Job" DataFormatString="{0}" HeaderText="群众"
+                                    <x:BoundField Width="100px" DataField="People" DataFormatString="{0}" HeaderText="群众"
                                         Hidden="false" />
-                                    <x:BoundField Width="100px" DataField="Job" DataFormatString="{0}" HeaderText="总分"
+                                    <x:BoundField Width="100px" DataField="Sum" DataFormatString="{0}" HeaderText="总分"
                                         Hidden="false" />
                                     <x:LinkButtonField Width="60px" HeaderText="操作" Text="查看详细" CommandName="Check" />
                                 </Columns>

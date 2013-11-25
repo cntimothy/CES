@@ -80,7 +80,7 @@ namespace CES.UI.Pages.EvaluationManagement
                 Response.ClearContent();
                 Response.ContentType = "application/excel";
                 Response.AddHeader("content-disposition", "attachment;filename=" + Server.UrlEncode(fileName));
-                string path = Server.MapPath(@"..\..\downloadfiles\template\" + fileName);
+                string path = Server.MapPath(@"..\..\downloadfiles\" + fileName);
                 FileInfo fi = new FileInfo(path);
                 Response.AddHeader("Content_Length", fi.Length.ToString());
                 Response.Filter.Close();

@@ -10,3 +10,4 @@ E:\projects\CES\CES.UI\bin\CES.DataStructure.pdb
 E:\projects\CES\CES.UI\obj\Debug\ResolveAssemblyReference.cache
 E:\projects\CES\CES.UI\obj\Debug\SQS.dll
 E:\projects\CES\CES.UI\obj\Debug\SQS.pdb
+E:\projects\CES\CES.UI\bin\Ionic.Zip.dll
