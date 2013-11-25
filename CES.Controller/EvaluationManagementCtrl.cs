@@ -156,8 +156,13 @@ namespace CES.Controller
         /// <returns></returns>
         public static bool GetScoresByID(ref List<float> scoreList, string id, ref string exception)
         {
-            scoreList.AddRange(new float[] { 52.3f, 56.6f, 85.2f, 52.5f, 56.0f, 85.6f, 52.8f, 56.9f, 85.3f});
+            scoreList.AddRange(new float[] { 52.2f, 56.6467f, 85.233f, 52.5f, 56.0f, 85.6f, 52.8f, 56.9f, 85.3f});
             return true;
+        }
+
+        public static bool ExportToExcel(ref string fileName, DataTable table, ref string exception)
+        {
+            throw new NotImplementedException();
         }
     }
 }

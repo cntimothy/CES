@@ -58,13 +58,13 @@ namespace CES.UI.Pages.EvaluationManagement {
         protected global::FineUI.Toolbar Toolbar1;
         
         /// <summary>
-        /// Button1 控件。
+        /// Button_Refresh 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button Button1;
+        protected global::FineUI.Button Button_Refresh;
         
         /// <summary>
         /// ToolbarSeparator1 控件。
@@ -76,13 +76,13 @@ namespace CES.UI.Pages.EvaluationManagement {
         protected global::FineUI.ToolbarSeparator ToolbarSeparator1;
         
         /// <summary>
-        /// Button2 控件。
+        /// Button_Export 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button Button2;
+        protected global::FineUI.Button Button_Export;
         
         /// <summary>
         /// Panel3 控件。
@@ -103,13 +103,13 @@ namespace CES.UI.Pages.EvaluationManagement {
         protected global::FineUI.SimpleForm SimpleForm1;
         
         /// <summary>
-        /// Label1 控件。
+        /// Label_EvaluationStage 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label Label1;
+        protected global::FineUI.Label Label_EvaluationStage;
         
         /// <summary>
         /// Grid1 控件。
@@ -119,5 +119,32 @@ namespace CES.UI.Pages.EvaluationManagement {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.Grid Grid1;
+        
+        /// <summary>
+        /// SimpleForm2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.SimpleForm SimpleForm2;
+        
+        /// <summary>
+        /// Label_Name 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Label Label_Name;
+        
+        /// <summary>
+        /// Label_Scores 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Label Label_Scores;
     }
 }
