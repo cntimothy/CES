@@ -28,9 +28,8 @@
                         Title="Panel" Layout="Column" Width="1100px">
                         <Items>
                             <x:Grid ID="Grid1" runat="server" Title="员工名单" AllowPaging="true" PageSize="20" EnableRowNumber="true"
-                                Height="520px" AutoScroll="true" DataKeyNames="ID" EnableCheckBoxSelect="true"
-                                CheckBoxSelectOnly="true" OnPageIndexChange="Grid1_PageIndexChange" ClearSelectedRowsAfterPaging="false"
-                                Width="700px">
+                                Height="520px" Width="680px" DataKeyNames="ID" EnableCheckBoxSelect="true"
+                                CheckBoxSelectOnly="true" OnPageIndexChange="Grid1_PageIndexChange" ClearSelectedRowsAfterPaging="false">
                                 <Columns>
                                     <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="工号"
                                         Hidden="false" />
@@ -38,11 +37,11 @@
                                         Hidden="false" />
                                     <x:BoundField Width="50px" DataField="Sex" DataFormatString="{0}" HeaderText="性别"
                                         Hidden="false" />
-                                    <x:BoundField Width="150px" DataField="Job" DataFormatString="{0}" HeaderText="职务"
+                                    <x:BoundField Width="150px" ExpandUnusedSpace="true" DataField="Job" DataFormatString="{0}"
+                                        HeaderText="职务" Hidden="false" />
+                                    <x:BoundField Width="80px" DataField="Role" DataFormatString="{0}" HeaderText="分类"
                                         Hidden="false" />
-                                    <x:BoundField Width="50px" DataField="Role" DataFormatString="{0}" HeaderText="分类"
-                                        Hidden="false" />
-                                    <x:BoundField Width="200px" ExpandUnusedSpace="true" DataField="Tele" DataFormatString="{0}"
+                                    <x:BoundField Width="150px" ExpandUnusedSpace="true" DataField="Tele" DataFormatString="{0}"
                                         HeaderText="电话" Hidden="false" />
                                 </Columns>
                             </x:Grid>

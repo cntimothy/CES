@@ -42,7 +42,7 @@
                             </x:Label>
                                 </Items>
                             </x:SimpleForm>
-                            <x:Grid ID="Grid1" runat="server" Title="被考评人名单" AutoScroll="true" EnableRowNumber="true" AutoHeight="true">
+                            <x:Grid ID="Grid1" runat="server" Title="被考评人名单" AutoScroll="true" EnableRowNumber="true" AutoHeight="true" Width="750px">
                                 <Columns>
                                     <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="工号"
                                         Hidden="false" />
@@ -50,9 +50,9 @@
                                         Hidden="false" />
                                     <x:BoundField Width="50px" DataField="Sex" DataFormatString="{0}" HeaderText="性别"
                                         Hidden="false" />
-                                    <x:BoundField Width="100px" DataField="Job" DataFormatString="{0}" HeaderText="职务"
+                                    <x:BoundField Width="150px" ExpandUnusedSpace="true" DataField="Job" DataFormatString="{0}" HeaderText="职务"
                                         Hidden="false" />
-                                    <x:BoundField Width="300px" ExpandUnusedSpace="true" DataField="Status" DataFormatString="{0}" HeaderText="考评完成情况"
+                                    <x:BoundField Width="300px" DataField="Status" DataFormatString="{0}" HeaderText="考评完成情况"
                                         Hidden="false" />
                                 </Columns>
                             </x:Grid>

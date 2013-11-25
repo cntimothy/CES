@@ -39,7 +39,7 @@ namespace CES.UI.Pages.EvaluationManagement
             }
             else
             {
-                showError("自述报告载入失败！", exception);
+                showError("述职报告载入失败！", exception);
                 return;
             }
         }
@@ -58,7 +58,7 @@ namespace CES.UI.Pages.EvaluationManagement
         /// </summary>
         private void loadEvaluatedName()
         {
-            Panel2.Title = ViewState["EvaluatedName"].ToString() + "的自述报告";
+            Panel2.Title = ViewState["EvaluatedName"].ToString() + "的述职报告";
         }
         #endregion
     }
