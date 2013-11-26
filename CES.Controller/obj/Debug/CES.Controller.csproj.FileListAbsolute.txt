@@ -1,0 +1,9 @@
+E:\projects\CES\CES.Controller\bin\Debug\CES.Controller.dll
+E:\projects\CES\CES.Controller\bin\Debug\CES.Controller.pdb
+E:\projects\CES\CES.Controller\bin\Debug\CES.DataStructure.dll
+E:\projects\CES\CES.Controller\bin\Debug\Ionic.Zip.dll
+E:\projects\CES\CES.Controller\bin\Debug\NPOI.dll
+E:\projects\CES\CES.Controller\bin\Debug\CES.DataStructure.pdb
+E:\projects\CES\CES.Controller\obj\Debug\ResolveAssemblyReference.cache
+E:\projects\CES\CES.Controller\obj\Debug\CES.Controller.dll
+E:\projects\CES\CES.Controller\obj\Debug\CES.Controller.pdb
