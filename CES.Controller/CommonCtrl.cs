@@ -16,7 +16,7 @@ namespace CES.Controller
         /// <returns></returns>
         public static bool GetCurrentStage(ref EvaluationStage evaluationStage, ref string exception)
         {
-            evaluationStage = EvaluationStage.STARTED;
+            evaluationStage = EvaluationStage.UNSTARTED;
             return true;
         }
 
