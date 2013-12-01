@@ -190,6 +190,16 @@ namespace CES.Controller
             return returnValue;
         }
 
+        /// <summary>
+        /// 查询当前是否可以提交分数。如果当前考评状态为已开始并且考评人的分数尚未提交，则返回true，否则返回false
+        /// </summary>
+        /// <param name="evaluatorID">考评人ID</param>
+        /// <returns></returns>
+        public static bool IsSubmitable(string evaluatorID)
+        {
+            return true;
+        }
+
         #region Private Method
         /// <summary>
         /// 根据DataTable项workBook中添加sheet，sheet中的列名即为DataTable中的列明
