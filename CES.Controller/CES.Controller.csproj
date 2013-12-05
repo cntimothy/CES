@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="AccountManagementCtrl.cs" />
     <Compile Include="CommonCtrl.cs" />
+    <Compile Include="EvaluateTblManagementCtrl.cs" />
     <Compile Include="EvaluationManagementCtrl.cs" />
     <Compile Include="LoginManagementCtrl.cs" />
     <Compile Include="MsgManagementCtrl.cs" />
