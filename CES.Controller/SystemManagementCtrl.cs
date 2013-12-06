@@ -106,5 +106,22 @@ namespace CES.Controller
         {
             return true;
         }
+
+        /// <summary>
+        /// 获取指定被考评人未完成考评的考评人名单
+        /// </summary>
+        /// <param name="leaderList">未完成领导的名单</param>
+        /// <param name="cadresList">未完成中层干部的名单</param>
+        /// <param name="peopleList">未完成群众的名单</param>
+        /// <param name="evaluatedID">被考评人ID</param>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static bool GetDetailEvaluationStatus(ref List<string> leaderList, ref List<string> cadresList, ref List<string> peopleList, string evaluatedID, ref string exception)
+        {
+            leaderList.AddRange(new string[]{"领导1", "领导2", "领导3"});
+            cadresList.AddRange(new string[] { "中层干部2", "中层干部3", "中层干部4", "中层干部5" });
+            peopleList.AddRange(new string[] { "群众1", "群众2", "群众3", "群众4", "群众5", "群众6" });
+            return true;
+        }
     }
 }

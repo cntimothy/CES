@@ -29,9 +29,9 @@ namespace CES.Controller
             table.Columns.Add("Status");
 
             table.Rows.Add("0001", "高1", "男", "职务123", "已完成");
-            table.Rows.Add("0002", "高1", "男", "职务123", "已完成");
-            table.Rows.Add("0003", "高1", "男", "职务123", "已完成");
-            table.Rows.Add("0004", "高1", "男", "职务123", "已完成");
+            table.Rows.Add("0002", "高2", "男", "职务123", "已完成");
+            table.Rows.Add("0003", "高3", "男", "职务123", "已完成");
+            table.Rows.Add("0004", "高4", "男", "职务123", "已完成");
             table.Rows.Add("0005", "高1", "男", "职务123", "已完成");
             table.Rows.Add("0006", "高1", "男", "职务123", "已完成");
             table.Rows.Add("0001", "高1", "男", "职务123", "未完成");

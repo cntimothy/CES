@@ -171,5 +171,28 @@ namespace CES.Controller
         {
             return true;
         }
+
+        /// <summary>
+        /// 根据姓名搜索，搜索成功且非空返回true，否则返回false
+        /// </summary>
+        /// <param name="table">包含返回信息(ID, Name, Sex, Job, Role, Tele)</param>
+        /// <param name="name">姓名</param>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static bool SearchStaffByName(ref DataTable table, string name, ref string exception)
+        {
+            table.Columns.Add("ID");
+            table.Columns.Add("Name");
+            table.Columns.Add("Sex");
+            table.Columns.Add("Job");
+            table.Columns.Add("Role");
+            table.Columns.Add("Tele");
+            string[] row9 = new string[] { "0009", "高1", "男", "职务1", "中层干部", "13820000000" };
+            string[] row10 = new string[] { "0010", "高1", "男", "职务1", "中层干部", "13820000000" };
+
+            table.Rows.Add(row9);
+            table.Rows.Add(row10);
+            return true;
+        }
     }
 }
